@@ -392,7 +392,7 @@ if(OPTION_BUNDLE_LIBRARIES AND UNIX AND NOT APPLE)
 			file(GET_RUNTIME_DEPENDENCIES
 					RESOLVED_DEPENDENCIES_VAR DEPENDENCIES
 					EXECUTABLES "${CMAKE_BINARY_DIR}/simutrans/simutrans"
-					PRE_EXCLUDE_REGEXES "libX11.so|libpulse*|libdbus*|libasound.so|libapparmor*|libsystemd*|libjack*|libportaudio*|libgcrypt*|libwayland*"
+					PRE_EXCLUDE_REGEXES "libX*.so|libxkbcommon.so|libpulse*|libdbus*|libasound.so|libapparmor*|libsystemd*|libjack*|libportaudio*|libgcrypt*|libwayland*"
 					POST_EXCLUDE_REGEXES "ld-linux|libc.so|libdl.so|libm.so|libgcc_s.so|libpthread.so|librt.so|libstdc...so")
 		]])
 	endif ()
