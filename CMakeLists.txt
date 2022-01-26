@@ -374,6 +374,33 @@ if (SIMUTRANS_INSTALL_PAK64)
 		 execute_process(COMMAND sh ../../get_pak.sh \${URLpak64} WORKING_DIRECTORY \${CMAKE_BINARY_DIR}/simutrans)
 		")
 	endif ()
+endif ()
+
+# bundle libraries on linux if requested
+if(OPTION_BUNDLE_LIBRARIES AND UNIX AND NOT APPLE)
+	# Steam Runtime cover most dependencies
+	if (SIMUTRANS_STEAM_BUILT)
+		install(CODE [[
+			file(GET_RUNTIME_DEPENDENCIES
+					RESOLVED_DEPENDENCIES_VAR DEPENDENCIES
+					EXECUTABLES "${CMAKE_BINARY_DIR}/simutrans/simutrans"
+					PRE_EXCLUDE_REGEXES "libSDL2*|libfreetype*|libpng*|libz.so*|libglib*|libogg*|libpcre*|libsystemd*|libpulse*|libjack*|libdbus*|libasound.so"
+					POST_EXCLUDE_REGEXES "ld-linux|libc.so|libdl.so|libm.so|libgcc_s.so|libpthread.so|librt.so|libstdc...so")
+		]])
+	else ()
+		install(CODE [[
+			file(GET_RUNTIME_DEPENDENCIES
+					RESOLVED_DEPENDENCIES_VAR DEPENDENCIES
+					EXECUTABLES "${CMAKE_BINARY_DIR}/simutrans/simutrans"
+					POST_EXCLUDE_REGEXES "ld-linux|libc.so|libdl.so|libm.so|libgcc_s.so|libpthread.so|librt.so|libstdc...so")
+		]])
+	endif ()
+	install(CODE [[
+		file(INSTALL
+				DESTINATION "${CMAKE_BINARY_DIR}/simutrans/libs"
+				FILES ${DEPENDENCIES}
+				FOLLOW_SYMLINK_CHAIN)
+	]])
 endif()
 
 
