@@ -324,14 +324,14 @@ add_custom_target(test
 #
 install(TARGETS simutrans RUNTIME DESTINATION "${CMAKE_BINARY_DIR}/simutrans/" BUNDLE DESTINATION "${CMAKE_BINARY_DIR}/simutrans/")
 
-#install(DIRECTORY "${CMAKE_SOURCE_DIR}/simutrans" DESTINATION "${CMAKE_BINARY_DIR}")
+install(DIRECTORY "${CMAKE_SOURCE_DIR}/simutrans" DESTINATION "${CMAKE_BINARY_DIR}")
 
 # download language files
 if (MSVC)
 	# MSVC has no variable on the install target path at execution time, which is why we expand the directories at creation time!
 	install(CODE "execute_process(COMMAND powershell -ExecutionPolicy Bypass -File ${CMAKE_SOURCE_DIR}/get_lang_files.ps1 WORKING_DIRECTORY ${simutrans_BINARY_DIR})")
 else ()
-	#install(CODE "execute_process(COMMAND sh ../get_lang_files.sh WORKING_DIRECTORY \${CMAKE_BINARY_DIR})")
+	install(CODE "execute_process(COMMAND sh ../get_lang_files.sh WORKING_DIRECTORY \${CMAKE_BINARY_DIR})")
 endif ()
 
 # pak installer
@@ -392,8 +392,8 @@ if(OPTION_BUNDLE_LIBRARIES AND UNIX AND NOT APPLE)
 			file(GET_RUNTIME_DEPENDENCIES
 					RESOLVED_DEPENDENCIES_VAR DEPENDENCIES
 					EXECUTABLES "${CMAKE_BINARY_DIR}/simutrans/simutrans"
-					PRE_EXCLUDE_REGEXES "libX*.so|libxkbcommon.so|libpulse*|libdbus*|libasound.so|libapparmor*|libsystemd*|libjack*|libportaudio*|libgcrypt*|libwayland*"
-					POST_EXCLUDE_REGEXES "ld-linux|libc.so|libdl.so|libm.so|libgcc_s.so|libpthread.so|librt.so|libstdc...so")
+					PRE_EXCLUDE_REGEXES "libxkbcommon.so|libpulse*|libdbus*|libasound.so|libapparmor*|libsystemd*|libjack*|libportaudio*|libgcrypt*|libwayland*"
+					POST_EXCLUDE_REGEXES "ld-linux|libc.so|libdl.so|libm.so|libgcc_s.so|libpthread.so|librt.so|libstdc...so|libX*.so")
 		]])
 	endif ()
 	install(CODE [[
