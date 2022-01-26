@@ -21,7 +21,7 @@ jobs:
 
         # We build fluidsynth with the minimum set of options we need
         # To keep dependencies low
-        sudo apt-get -ym libinstpatch-dev
+        sudo apt-get -ym instal libinstpatch-dev
         wget https://github.com/FluidSynth/fluidsynth/archive/v2.2.5.tar.gz
         tar xf v*.tar.gz
         (
