@@ -383,7 +383,7 @@ if(OPTION_BUNDLE_LIBRARIES AND UNIX AND NOT APPLE)
 		install(CODE [[
 			file(GET_RUNTIME_DEPENDENCIES
 					RESOLVED_DEPENDENCIES_VAR DEPENDENCIES
-					EXECUTABLES "${CMAKE_BINARY_DIR}/simutrans/simutrans"
+					EXECUTABLES "${CMAKE_BINARY_DIR}/simutrans/simutrans")
 		]])
 	else ()
 		install(CODE [[
