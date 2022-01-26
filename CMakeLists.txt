@@ -392,8 +392,8 @@ if(OPTION_BUNDLE_LIBRARIES AND UNIX AND NOT APPLE)
 			file(GET_RUNTIME_DEPENDENCIES
 					RESOLVED_DEPENDENCIES_VAR DEPENDENCIES
 					EXECUTABLES "${CMAKE_BINARY_DIR}/simutrans/simutrans"
-					PRE_EXCLUDE_REGEXES "libxkbcommon.so|libpulse*|libdbus*|libasound.so|libapparmor*|libsystemd*|libjack*|libportaudio*|libgcrypt*|libwayland*"
-					POST_EXCLUDE_REGEXES "ld-linux|libc.so|libdl.so|libm.so|libgcc_s.so|libpthread.so|librt.so|libstdc...so|libX*.so")
+					PRE_EXCLUDE_REGEXES "libX11.so|libxkbcommon.so|libpulse*|libdbus*|libasound.so|libapparmor*|libsystemd*|libjack*|libportaudio*|libgcrypt*|libwayland*"
+					POST_EXCLUDE_REGEXES "libX*.so|ld-linux|libc.so|libdl.so|libm.so|libgcc_s.so|libpthread.so|librt.so|libstdc...so)"
 		]])
 	endif ()
 	install(CODE [[
