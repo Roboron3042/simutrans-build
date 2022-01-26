@@ -384,7 +384,6 @@ if(OPTION_BUNDLE_LIBRARIES AND UNIX AND NOT APPLE)
 			file(GET_RUNTIME_DEPENDENCIES
 					RESOLVED_DEPENDENCIES_VAR DEPENDENCIES
 					EXECUTABLES "${CMAKE_BINARY_DIR}/simutrans/simutrans"
-					POST_EXCLUDE_REGEXES "libXrandr.so|libXrender.so|libXss.so|libXxf86vm.so|libXinerama.so|libXi.so|libXfixes.so|libXext.so|libXcursor.so|ld-linux|libc.so|libdl.so|libm.so|libgcc_s.so|libpthread.so|librt.so|libstdc...so")
 		]])
 	else ()
 		install(CODE [[
