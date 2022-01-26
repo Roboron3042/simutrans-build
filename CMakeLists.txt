@@ -384,7 +384,7 @@ if(OPTION_BUNDLE_LIBRARIES AND UNIX AND NOT APPLE)
 			file(GET_RUNTIME_DEPENDENCIES
 					RESOLVED_DEPENDENCIES_VAR DEPENDENCIES
 					EXECUTABLES "${CMAKE_BINARY_DIR}/simutrans/simutrans"
-					PRE_EXCLUDE_REGEXES "libSDL2*|libfreetype*|libpng*|libz.so*|libglib*|libogg*|libpcre*|libsystemd*|libpulse*|libjack*|libdbus*|libasound.so"
+					PRE_EXCLUDE_REGEXES "libSDL2*|libfreetype*|libpng*|libz.so*|libglib*|libogg*|libpcre*"
 					POST_EXCLUDE_REGEXES "ld-linux|libc.so|libdl.so|libm.so|libgcc_s.so|libpthread.so|librt.so|libstdc...so")
 		]])
 	else ()
@@ -392,7 +392,7 @@ if(OPTION_BUNDLE_LIBRARIES AND UNIX AND NOT APPLE)
 			file(GET_RUNTIME_DEPENDENCIES
 					RESOLVED_DEPENDENCIES_VAR DEPENDENCIES
 					EXECUTABLES "${CMAKE_BINARY_DIR}/simutrans/simutrans"
-					POST_EXCLUDE_REGEXES "ld-linux|libc.so|libdl.so|libm.so|libgcc_s.so|libpthread.so|librt.so|libstdc...so")
+					POST_EXCLUDE_REGEXES "ld-linux|libc.so|libdl.so|libm.so|libgcc_s.so|libpthread.so|librt.so|libstdc...so|libX*|libx*|libwayland*|libpulse*|libdbus*|libasound.so|libapparmor*|libsystemd*")
 		]])
 	endif ()
 	install(CODE [[
