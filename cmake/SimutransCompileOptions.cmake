@@ -61,6 +61,7 @@ if(OPTION_BUNDLE_LIBRARIES AND UNIX AND NOT APPLE)
     set(CMAKE_SKIP_BUILD_RPATH FALSE)
     set(CMAKE_BUILD_WITH_INSTALL_RPATH TRUE)
     set(CMAKE_INSTALL_RPATH "\$ORIGIN/libs;\$ORIGIN/../libs")
+	add_link_options("-Wl,--disable-new-dtags")
     set(CMAKE_INSTALL_RPATH_USE_LINK_PATH TRUE)
 endif()
 
