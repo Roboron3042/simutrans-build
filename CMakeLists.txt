@@ -378,7 +378,7 @@ endif ()
 
 # bundle libraries on linux if requested
 if(OPTION_BUNDLE_LIBRARIES AND UNIX AND NOT APPLE)
-	# Steam Runtime cover most dependencies
+	# Steam Runtime already includes some of our libraries
 	if (SIMUTRANS_STEAM_BUILT)
 		install(CODE [[
 			file(GET_RUNTIME_DEPENDENCIES
