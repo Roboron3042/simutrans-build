@@ -399,14 +399,14 @@ if(OPTION_BUNDLE_LIBRARIES AND UNIX AND NOT APPLE)
 	endif ()
 	install(CODE [[
 		file(INSTALL
-				DESTINATION "${CMAKE_BINARY_DIR}/simutrans/libs"
+				DESTINATION "${CMAKE_BINARY_DIR}/simutrans/lib"
 				FILES ${DEPENDENCIES}
 				FOLLOW_SYMLINK_CHAIN)
 	]])
 endif()
 
 #
-# Nettool/Makeobjhttps://github.com/Roboron3042/simutrans-build/releases/download/Nightly/simulinux-x64-nightly.zip
+# Nettool/Makeobj
 #
 add_subdirectory(makeobj EXCLUDE_FROM_ALL)
 add_subdirectory(nettools EXCLUDE_FROM_ALL)

@@ -3,12 +3,11 @@
 *.vcproj.*
 /Debug
 /Release
-/build
+/build*
 /config.*
 /makeobj/makeobj
-/makeobj/makeobj.exe
 *sim
-/sim.exe
+*.exe
 *.*~
 *~
 /.build
