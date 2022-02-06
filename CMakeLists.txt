@@ -385,7 +385,8 @@ if(OPTION_BUNDLE_LIBRARIES AND UNIX AND NOT APPLE)
 			file(GET_RUNTIME_DEPENDENCIES
 					RESOLVED_DEPENDENCIES_VAR DEPENDENCIES
 					EXECUTABLES "${CMAKE_BINARY_DIR}/simutrans/simutrans"
-					PRE_EXCLUDE_REGEXES "libpulse*|libdbus*|libasound.so|libapparmor*|libsystemd*|libjack*|libportaudio*|libgcrypt*|libwayland*|libSDL2*|libfreetype*|libpng*|libz.so*|libglib*|libogg*|libpcre*|libvorbis*"
+					DIRECTORIES "${ADDITIONAL_DIRS}"
+					PRE_EXCLUDE_REGEXES "libSDL2*|libfreetype*|libpng*|libz.so*|libglib*|libogg*|libpcre*|libvorbis*"
 					POST_EXCLUDE_REGEXES "ld-linux|libc.so|libdl.so|libm.so|libgcc_s.so|libpthread.so|librt.so|libstdc...so")
 		]])
 	else ()
@@ -393,7 +394,8 @@ if(OPTION_BUNDLE_LIBRARIES AND UNIX AND NOT APPLE)
 			file(GET_RUNTIME_DEPENDENCIES
 					RESOLVED_DEPENDENCIES_VAR DEPENDENCIES
 					EXECUTABLES "${CMAKE_BINARY_DIR}/simutrans/simutrans"
-					PRE_EXCLUDE_REGEXES "libpulse*|libdbus*|libasound.so|libapparmor*|libsystemd*|libjack*|libportaudio*|libgcrypt*|libSDL2*"
+					DIRECTORIES "${ADDITIONAL_DIRS}"
+					PRE_EXCLUDE_REGEXES "libSDL2*"
 					POST_EXCLUDE_REGEXES "ld-linux|libc.so|libdl.so|libm.so|libgcc_s.so|libpthread.so|librt.so|libstdc...so")
 		]])
 	endif ()
