@@ -33,7 +33,7 @@ jobs:
     - name: build
       run: |
         export PKG_CONFIG_PATH=/usr/local/lib64/pkgconfig/
-        cmake -S . -B build -DCMAKE_BUILD_TYPE=Release -DOPTION_BUNDLE_LIBRARIES=ON
+        cmake -S . -B build -DCMAKE_BUILD_TYPE=Release -DOPTION_BUNDLE_LIBRARIES=ON -DCMAKE_PREFIX_PATH="/usr/local/lib64"
         cmake --build build -j$(nproc) --target install
 
     - name: distribute
