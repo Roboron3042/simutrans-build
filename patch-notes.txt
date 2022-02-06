@@ -1,0 +1,56 @@
+[b][size=14pt]Full changelog[/size][/b]
+
+Here's the full list of changes since the last version.
+
+[b]Added[/b]
+[*] mark obsolete vehicls in vehicle-details tab
+[*] minimize buttons to convoi, halt and line window
+[*] button to remove double entries in schedules
+[*] Setting to scale screen manually
+[*] not connected to any player network as additional option
+
+[b]Changed[/b]
+[*] Infinite mouse scrolling can be activated manually in the display settings; but it will fail with certain touch devices~
+[*] FluidSynth looks also for SF3 soundfonts
+[*] All resizable windows get minimize button in titlebar
+[*] one more row in schedule dialog for a little nicer display
+
+[b]Fixed[/b]
+[*] show overlay number on vehicle of convoy in depot
+[*] station display crashes on old paksets when certain windows unicode fonts are selected
+[*] time and minimum loading were not correctlin shown for schedule entries
+[*] empty schedules should be allowed...
+[*] this is not an error, happens when line is created
+[*] Possible crash when SDL1 texture pitch != requested width
+[*] pakset installer closes simutrans again after exiting the second time, but only if no paksets are found
+[*] sscanf_schedule ensures valid schedule
+[*] correctly adjust current_stop when moving entries in schedule up/down
+[*] Mouse pointer is restored after exiting the pakset installer from in-game options
+[*] crash introduced in r10372
+[*] allow tunnel building starting from tunnel tiles
+[*] Exiting pakset installer for a second time no longer closes Simutrans
+[*] loading of savegames with broken AI data (table keys have to be enclosed by [".."] not only "..")
+[*] when loading AI scripts respect -noaddons setting
+[*] delete double entries in schedules while editing, fix memory leak
+[*] Uninitialized reads when using ai_goods_t objects
+[*] Memory leak when translation contains malformed strings
+[*] tooltip in main menu
+[*] beach calculation was broken
+[*] crash in line window (when sorting in reverse order)
+[*] size of follow convoi when minimap is zoomed
+[*] Wrong formatting specifier in network_send_data
+[*] Translations from paksets fail to load
+[*] Automated tests run forever when script throws an exception
+[*] schedule highlightnigh in transport net on convois and minimap fixed and restored
+[*] ISO code can be first or last
+[*] pakset isntaller in windows after fullscreen enabled caused hang, because of invisble isntaller
+[*] Wrong format specifiers in obj_t::~obj_t
+[*] Runaway simulation speed in some cases if modal_dialogue is open
+[*] Setting MSG_LEVEL to 0 enabled all messages in DEBUG mode
+[*] show_month==1 now consistently for 24h per month
+[*] link 32 bit cmake with GCC
+[*] buy vehicle only with release (fixes also finger usage)
+[*] (Roboron) Compile error when using FluidSynth without SDL2
+[*] no jumping up and down in gui if schedule in empty or waypoint
+[*] arrow now call the inteded routines
+[*] arrow also works with two entries in schedule
